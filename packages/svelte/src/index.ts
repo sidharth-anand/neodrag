@@ -489,8 +489,8 @@ const snapToGrid = memoize(
 	([xSnap, ySnap]: [number, number], pendingX: number, pendingY: number): [number, number] => {
 		const calc = (val: number, snap: number) => Math.round(val / snap) * snap;
 
-		const x = calc(pendingX, xSnap);
-		const y = calc(pendingY, ySnap);
+		const x = calc(pendingX, xSnap || 1);
+		const y = calc(pendingY, ySnap || 1);
 
 		return [x, y];
 	}
